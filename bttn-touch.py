@@ -5,6 +5,15 @@ from subprocess import call
 from datetime import datetime
 import sqlite3
 
+"""
+Database entries:
+* state = ["reset", "bezahlen", "reklamieren", "bestellen"]
+* ip_address
+* timestamp
+
+is_resetclick is just a quick'n'dirty variation of is_doubleclick to detect whether or not the current buttonstate should be reset
+"""
+
 false = 0
 true = 1
 doubleClickTimeoutMs = 1500
