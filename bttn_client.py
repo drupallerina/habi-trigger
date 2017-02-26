@@ -5,7 +5,19 @@ import time
 import requests
 import paho.mqtt.client as mqtt
 
-configFile = file('bttn_trigger.yaml', 'r')
+"""
+Structure of bttn_client.yaml:
+---
+'api_key': 'bt.tn API KEY'
+'bttn_id': 'bt.tn ID'
+'sleep_time': 10
+---
+* The sleep time defines the polling frequency in seconds
+* The api_key and the bttn_id can be found in the bt.tn web interface
+"""
+
+
+configFile = file('bttn_client.yaml', 'r')
 config = yaml.load(configFile)
 
 #Connect to mqtt client on localhost
